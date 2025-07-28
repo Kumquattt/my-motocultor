@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* MAIN COLOR PALETTE*/
+:root {
+  --black: #010000ff;
+  --ultra-violet: #6c628cff;
+  --wisteria: #b7a3e7ff;
+  --african-violet: #a291c8ff;
+  --eggplant: #764665ff;
+}
