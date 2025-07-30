@@ -1,20 +1,30 @@
 /* TODO separate by scene and day */
 
+.slots-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  overflow: scroll;
+}
+
 .slots {
   display: flex;
-  overflow: scroll;
-  /* width: 700px; */
+  flex-direction: row;
+  overflow-y: auto;
+  align-items: flex-start;
 }
 
 .sceneSlots {
   display: flex;
   flex-direction: column;
+  overflow-y: visible;
 
   background-color: var(--ultra-violet);
   border-radius: 8px;
   margin: 5px;
-  flex: 1;
-  overflow: hidden;
+  /* THIS v is only for the scene name, TODO to be moved ! */
+  overflow-x: hidden;
 }
 
 .scene-name {
@@ -24,6 +34,7 @@
 .slot {
   background: var(--wisteria);
   border-radius: 8px;
+  min-height: 100px;
   height: 100px;
   padding: 10px;
   margin: 10px;
@@ -34,4 +45,16 @@
 .is-favorite {
   border: solid 3px gold;
   margin: 7px;
+}
+
+.slots-menu-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 30px;
+  padding: 10px;
+
+  .favorite-toggle-disabled {
+    color: transparent;
+    text-shadow: 0 0 0 #cc2e75;
+  }
 }

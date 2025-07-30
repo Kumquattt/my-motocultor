@@ -13,7 +13,9 @@ export class MyRunningOrder {
   localStorageFavoritesKey = 'favoritesSlots';
   localStorageFavoritesToggle = 'favoritesToggle';
 
-  slots = signal<Slot[]>(slotsBaseList);
+  slots = signal<Slot[]>(
+    slotsBaseList.sort((a, b) => a.start.getTime() - b.start.getTime())
+  );
   favoritedSlots = computed(() =>
     this.slots().filter((slot) => slot.isFavorite)
   );
@@ -64,9 +66,21 @@ export class MyRunningOrder {
         slots.filter((slot) => value == slot.scene)
       );
     }
-
-    console.log(myMap);
     return myMap;
+  }
+
+  toggleFavoriteSlot(toggledSlot: Slot) {
+    this.slots.update((currentSlots) =>
+      currentSlots.map((currentSlot) =>
+        this.#toggleFavoriteIfEquals(currentSlot, toggledSlot)
+      )
+    );
+    this.#saveSlots();
+  }
+  #toggleFavoriteIfEquals(currentSlot: Slot, toggledSlot: Slot): Slot {
+    return currentSlot.id == toggledSlot.id
+      ? { ...currentSlot, isFavorite: !currentSlot.isFavorite }
+      : currentSlot;
   }
 
   #saveSlots() {
@@ -78,16 +92,7 @@ export class MyRunningOrder {
     );
   }
 
-  #slotsFromJSONString(data: string): Slot[] {
-    typeof data == 'object';
-    const dataArray = JSON.parse(data) as [];
-
-    const savedSlots = dataArray.map((jsonObject) => Slot.fromJSON(jsonObject));
-    return savedSlots;
-  }
-
-  toggleFavoriteSlot(slot: Slot) {
-    slot.isFavorite = !slot.isFavorite;
-    this.#saveSlots();
+  toggleShowFavoritesButton() {
+    this.showFavoritesOnly.update(state => !state)
   }
 }

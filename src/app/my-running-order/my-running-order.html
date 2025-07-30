@@ -1,30 +1,38 @@
-<section class="slots-menu">
-  Filter favorites <input type="checkbox" [(ngModel)]="showFavoritesOnly" />
-</section>
-<section class="slots">
-  @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
+<div class="slots-page">
+  <section class="slots">
+    @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
 
-  <div class="sceneSlots">
-    <section class="scene-name">
-      <h2>{{ sceneSlots[0] }}</h2>
-    </section>
+    <div class="sceneSlots">
+      <section class="scene-name">
+        <h2>{{ sceneSlots[0] }}</h2>
+      </section>
 
-    @for(slot of sceneSlots[1]; track slot.id) {
-    <section
-      class="slot"
-      [class.is-favorite]="slot.isFavorite"
-      (click)="toggleFavoriteSlot(slot)"
-    >
-      <div>{{ slot.band }}</div>
-      <div>{{ slot.day }}</div>
-      <div>{{ slot.start.getHours() }}h{{ slot.start.getMinutes() }}</div>
-      <div>{{ slot.end.getHours() }}h{{ slot.end.getMinutes() }}</div>
-    </section>
+      @for(slot of sceneSlots[1]; track slot.id) {
+      <!-- TODO keep scene name at the top -->
+      <section
+        class="slot"
+        [class.is-favorite]="slot.isFavorite"
+        (click)="toggleFavoriteSlot(slot)"
+      >
+        <div>{{ slot.band }}</div>
+        <div>{{ slot.day }}</div>
+        <div>{{ slot.start.getHours() }}h{{ slot.start.getMinutes() }}</div>
+        <div>{{ slot.end.getHours() }}h{{ slot.end.getMinutes() }}</div>
+      </section>
+      }
+    </div>
     }
-  </div>
-  }
-</section>
-
+  </section>
+  <section class="slots-menu-footer">
+    <div class="toggle-favorites-only">
+      <span
+        (click)="toggleShowFavoritesButton()"
+        [class.favorite-toggle-disabled]="!showFavoritesOnly()"
+        >⭐</span
+      >
+    </div>
+  </section>
+</div>
 <!-- TODO
     - slot component
     - slot time component
