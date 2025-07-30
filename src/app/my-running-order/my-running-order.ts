@@ -27,10 +27,16 @@ export class MyRunningOrder {
   shownSlotsByScene = computed(() => this.#groupByScene(this.shownSlots()));
 
   constructor() {
-    const savedSlots = localStorage.getItem(this.localStorageFavoritesKey);
-    if (savedSlots) {
+    const savedSlotsJSON = localStorage.getItem(this.localStorageFavoritesKey);
+    if (savedSlotsJSON) {
       try {
-        this.slots.set(this.#slotsFromJSONString(savedSlots));
+        const favoritesSlotsIds = JSON.parse(savedSlotsJSON) as string[];
+        const savedSlots: Slot[] = this.slots().map((slot) =>
+          favoritesSlotsIds.includes(slot.id)
+            ? { ...slot, isFavorite: true }
+            : slot
+        );
+        this.slots.set(savedSlots);
       } catch (error) {
         console.log('Issue when fetching slots from local storage: ' + error);
       }
@@ -63,12 +69,12 @@ export class MyRunningOrder {
     return myMap;
   }
 
-  // TODO Only save ids
   #saveSlots() {
     console.log('Saving slots');
+    const favorites = this.favoritedSlots();
     localStorage.setItem(
       this.localStorageFavoritesKey,
-      JSON.stringify(this.slots())
+      JSON.stringify(favorites.map((slot) => slot.id))
     );
   }
 

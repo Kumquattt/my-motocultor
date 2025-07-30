@@ -8,11 +8,13 @@
   --african-violet: #a291c8ff;
   --eggplant: #764665ff;
 
-  --slotA: #4F8883;
-  --slotB: #C0A5FF;
-  --motoc-dark-red: #AA3B5B;
-  --motoc-purple: #C0A5FF;
+  --slotA: #4f8883;
+  --slotB: #c0a5ff;
+  --motoc-dark-red: #aa3b5b;
+  --motoc-purple: #c0a5ff;
 
+  background-color: var(--black);
+  color: white;
 }
 
 /* TODO starry night background ? */
