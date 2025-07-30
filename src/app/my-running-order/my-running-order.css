@@ -1,17 +1,34 @@
 /* TODO separate by scene and day */
+
 .slots {
   display: flex;
-  flex-direction: column;
-  background-color: var(--ultra-violet);
+  overflow: scroll;
+  /* width: 700px; */
+}
 
-  width: 200px;
+.sceneSlots {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--ultra-violet);
+  border-radius: 8px;
+  margin: 5px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.scene-name {
+  /* color: var(--motoc-dark-red); */
 }
 
 .slot {
   background: var(--wisteria);
   border-radius: 8px;
+  height: 100px;
   padding: 10px;
   margin: 10px;
+  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .is-favorite {
