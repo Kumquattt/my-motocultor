@@ -1,19 +1,19 @@
-<div class="slots-page">
-  <section class="slots">
+<div class="page">
+  <section class="slots-columns">
     @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
-
-    <div class="sceneSlots">
-      <section class="scene-name">
+    <div class="slots-by-scene-with-header">
+      <section class="header-scene-name">
         <h2>{{ sceneSlots[0] }}</h2>
       </section>
-
-      @for(slot of sceneSlots[1]; track slot.id) {
-      <!-- TODO keep scene name at the top -->
-      <app-slot-component
-        [slotInput]="slot"
-        (favoriteToggle)="toggleFavoriteSlot(slot)"
-      />
-      }
+      <section class="slots">
+        @for(slot of sceneSlots[1]; track slot.id) {
+        <!-- TODO keep scene name at the top -->
+        <app-slot-component
+          [slotInput]="slot"
+          (favoriteToggle)="toggleFavoriteSlot(slot)"
+        />
+        }
+      </section>
     </div>
     }
   </section>
