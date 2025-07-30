@@ -2,10 +2,11 @@ import { Component, computed, effect, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Scene } from '../my-motocultor/Enums';
 import { Slot, slotsBaseList } from '../my-motocultor/Slots';
+import { SlotComponent } from './slot/slot';
 
 @Component({
   selector: 'app-my-running-order',
-  imports: [FormsModule],
+  imports: [FormsModule, SlotComponent],
   templateUrl: './my-running-order.html',
   styleUrl: './my-running-order.css',
 })
@@ -70,6 +71,7 @@ export class MyRunningOrder {
   }
 
   toggleFavoriteSlot(toggledSlot: Slot) {
+    console.log('parent toggle faved');
     this.slots.update((currentSlots) =>
       currentSlots.map((currentSlot) =>
         this.#toggleFavoriteIfEquals(currentSlot, toggledSlot)
@@ -93,6 +95,6 @@ export class MyRunningOrder {
   }
 
   toggleShowFavoritesButton() {
-    this.showFavoritesOnly.update(state => !state)
+    this.showFavoritesOnly.update((state) => !state);
   }
 }

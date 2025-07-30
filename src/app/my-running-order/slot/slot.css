@@ -1,0 +1,15 @@
+.slot {
+  background: var(--wisteria);
+  border-radius: 8px;
+  min-height: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.is-favorite {
+  border: solid 3px gold;
+  margin: 7px;
+}
