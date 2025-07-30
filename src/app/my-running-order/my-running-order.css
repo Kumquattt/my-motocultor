@@ -1,0 +1,20 @@
+/* TODO separate by scene and day */
+.slots {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ultra-violet);
+
+  width: 200px;
+}
+
+.slot {
+  background: var(--wisteria);
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.is-favorite {
+  border: solid 3px gold;
+  margin: 7px;
+}

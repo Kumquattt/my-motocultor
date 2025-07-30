@@ -1,0 +1,23 @@
+<div class="slots-menu">
+  Filter favorites <input type="checkbox" [(ngModel)]="showFavoritesOnly" />
+</div>
+<div class="slots">
+  @for(slot of shownSlots(); track slot.id) {
+  <section
+    class="slot"
+    [class.is-favorite]="slot.isFavorite"
+    (click)="toggleFavoriteSlot(slot)"
+  >
+    {{ slot.scene }}
+    {{ slot.band }}
+    {{ slot.day }}
+    {{ slot.start.getHours() }}h{{ slot.start.getMinutes() }} -
+    {{ slot.end.getHours() }}h{{ slot.end.getMinutes() }}
+  </section>
+  }
+</div>
+
+<!-- TODO
+    - slot component
+    - slot time component
+-->
