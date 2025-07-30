@@ -13,6 +13,7 @@
   h1 {
     margin: 1px;
   }
+  border-bottom: 2px solid var(--slotA);
 }
 
 .content {

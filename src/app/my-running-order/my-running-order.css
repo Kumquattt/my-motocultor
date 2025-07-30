@@ -20,7 +20,7 @@
   flex-direction: column;
   overflow-y: visible;
 
-  background-color: var(--ultra-violet);
+  background-color: var(--anthracite);
   border-radius: 8px;
   margin: 5px;
   /* THIS v is only for the scene name, TODO to be moved ! */
@@ -52,9 +52,13 @@
   flex-direction: row-reverse;
   font-size: 30px;
   padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--motoc-dark-red);
+  border-bottom-style: none;
 
   .favorite-toggle-disabled {
     color: transparent;
     text-shadow: 0 0 0 #cc2e75;
+    filter: saturate(00%);
   }
 }
