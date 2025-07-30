@@ -43,7 +43,7 @@
 .slots-menu-footer {
   display: flex;
   flex-direction: row-reverse;
-  font-size: 30px;
+  font-size: 150%;
   padding: 10px;
   border-radius: 8px;
   border: 2px solid var(--motoc-dark-red);

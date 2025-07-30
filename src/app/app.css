@@ -12,6 +12,7 @@
   padding: 10px;
   h1 {
     margin: 1px;
+    font-size: 150%;
   }
   border-bottom: 2px solid var(--slotA);
 }
