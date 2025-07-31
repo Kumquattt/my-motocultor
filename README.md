@@ -1,7 +1,7 @@
 # MyMotocultor 🤘
 
-This is a simple web page to track your running-order at the Motocultor 2025. <br/>
-Select the bands you want to see, and press the star button to see your favorites !
+This is a simple web page to track your running-order at the Motocultor 2025, as I could not find any official one. <br/>
+Simply select the bands you want to see, press the star button, and only your those are visible ! You can also filter by day.
 
 # Build and deployment
 
