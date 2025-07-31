@@ -18,13 +18,13 @@
     }
   </section>
   <section class="slots-menu-footer">
-    <div class="toggle-favorites-only">
-      <span
-        (click)="toggleShowFavoritesButton()"
-        [class.favorite-toggle-disabled]="!showFavoritesOnly()"
-        >⭐</span
-      >
-    </div>
+    <button
+      class="toggle-favorites-only clickable-div"
+      [class.favorite-toggle-disabled]="!showFavoritesOnly()"
+      (click)="toggleShowFavoritesButton()"
+    >
+      ⭐
+    </button>
   </section>
 </div>
 <!-- TODO

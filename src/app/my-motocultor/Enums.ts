@@ -1,8 +1,8 @@
 export enum Scene {
   DM = 'Dave Mustage',
+  SS = 'Suppositor Stage',
   MF = 'Massey Ferguscene',
   BD = 'Bruck Dickinscene',
-  SS = 'Suppositor Stage',
 }
 
 export enum Day {

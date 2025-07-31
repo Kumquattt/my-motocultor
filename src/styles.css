@@ -14,8 +14,13 @@
   --motoc-dark-red: #aa3b5b;
   --motoc-purple: #c0a5ff;
 
+  --motoc-font: "MarvinVisionsBig";
+  --motoc-letter-spacing: 0.04em;
+
   background-color: var(--black);
   color: white;
+  font-family: var(--motoc-font);
+  letter-spacing: var(--motoc-letter-spacing);
 }
 
 html,
@@ -23,6 +28,20 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+.clickable-div {
+  cursor: pointer;
+
+  /* Prevent text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+@font-face {
+  font-family: MarvinVisionsBig;
+  src: url(app/my-motocultor/assets/MarvinVisions-Bold.woff2);
 }
 
 /* TODO starry night background ? */

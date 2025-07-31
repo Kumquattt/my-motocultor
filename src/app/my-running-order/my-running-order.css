@@ -26,6 +26,7 @@
 }
 
 .header-scene-name {
+  padding: 3px;
   h2 {
     /* color: var(--motoc-dark-red); */
     overflow: hidden;
@@ -48,10 +49,23 @@
   border-radius: 8px;
   border: 2px solid var(--motoc-dark-red);
   border-bottom-style: none;
+}
 
-  .favorite-toggle-disabled {
-    color: transparent;
-    text-shadow: 0 0 0 #cc2e75;
-    filter: saturate(00%);
+.toggle-favorites-only {
+  background-color: transparent;
+  border: 2px solid gold;
+  border-radius: 100%;
+  padding: 0.2rem 0.3rem 0.4rem 0.4rem;
+  font-size: 100%;
+  /* padding-left: 0.5%; */
+
+  &:active {
+    transform: translateY(1px);
   }
+}
+.favorite-toggle-disabled {
+  border-color: var(--motoc-dark-red);
+  color: transparent;
+  text-shadow: 0 0 0 #cc2e75;
+  filter: saturate(00%);
 }
