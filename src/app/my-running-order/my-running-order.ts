@@ -1,6 +1,9 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { dimanche } from '../my-motocultor/assets/running-order/dimanche';
 import { jeudi } from '../my-motocultor/assets/running-order/jeudi';
+import { samedi } from '../my-motocultor/assets/running-order/samedi';
+import { vendredi } from '../my-motocultor/assets/running-order/vendredi';
 import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot } from '../my-motocultor/Slots';
@@ -117,17 +120,14 @@ export class MyRunningOrder {
   }
 
   #initializeSlots(): Slot[] {
-    const slots = jeudi
-      .map((jsonSlot) => Slot.fromJSON(jsonSlot))
-      .sort((a, b) => a.start.getTime() - b.start.getTime());
-    // For coloring
-    for (let index = 1; index < slots.length; index += 2) {
-      slots[index].isEven = false;
-    }
+    const slots = [...jeudi, ...vendredi, ...samedi, ...dimanche].map(
+      (jsonSlot) => Slot.fromJSON(jsonSlot)
+    );
+    // .sort((a, b) => a.start.getTime() - b.start.getTime());
     return slots;
   }
 
-  isEvenScene(scene: Scene) {
+  sceneNeedsSpacer(scene: Scene) {
     return [Scene.MF, Scene.SS].includes(scene);
   }
 }

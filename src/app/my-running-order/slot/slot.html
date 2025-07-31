@@ -1,15 +1,15 @@
 @if(slotInput()) { @let slot = slotInput();
 <section
   class="slot"
-  [class.slot-a]="slot!.isEven"
-  [class.slot-b]="!slot!.isEven"
+  [class.slot-a]="!slot!.isPurple"
+  [class.slot-b]="slot!.isPurple"
   [class.is-favorite]="slot!.isFavorite"
   (click)="toggleFavoriteSlot()"
 >
   <!-- <div>{{ slot!.day }}</div> -->
   <div class="band hide-scrollbars">{{ slot!.band }}</div>
   <div class="time">
-    {{ printTime(slot!.start) }}
+    {{ printTime(slot!.start) }} >
     <div class="end">> {{ printTime(slot!.end) }}</div>
   </div>
 </section>

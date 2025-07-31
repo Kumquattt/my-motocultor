@@ -7,6 +7,7 @@ export class SlotJSON {
   end: Date;
   scene: Scene;
   band: string;
+  isPurple: boolean = false;
 
   constructor(
     id: string,

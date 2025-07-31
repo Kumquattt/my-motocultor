@@ -7,8 +7,11 @@
         <h2>{{ sceneSlots[0] }}</h2>
       </section>
       <section class="slots">
-        <section [hidden]="isEvenScene(sceneSlots[0])" class="spacer"></section>
-        @for(slot of sceneSlots[1]; track slot.id) {
+        <section
+          [hidden]="!sceneNeedsSpacer(sceneSlots[0])"
+          class="spacer"
+        ></section>
+        @for(slot of sceneSlots[1]; track slot.band) {
         <app-slot-component
           [slotInput]="slot"
           (favoriteToggle)="toggleFavoriteSlot(slot)"
@@ -19,6 +22,7 @@
     </div>
     }
   </section>
+
   <section class="slots-menu-footer">
     <div
       class="day-button isAll clickable-div"

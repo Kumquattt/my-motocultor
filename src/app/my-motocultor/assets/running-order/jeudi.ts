@@ -9,6 +9,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T15:55:00'),
     scene: Scene.DM,
     band: 'DOGMA',
+    isPurple: true,
   },
   {
     id: '2',
@@ -17,14 +18,16 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T15:55:00'),
     scene: Scene.BD,
     band: 'SAQQARAH',
+    isPurple: true,
   },
   {
     id: '3',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T15:10:00'),
-    end: new Date('2025-08-14T15:55:00'),
+    start: new Date('2025-08-14T16:00:00'),
+    end: new Date('2025-08-14T16:45:00'),
     scene: Scene.SS,
     band: 'VERSATILE',
+    isPurple: false,
   },
   {
     id: '4',
@@ -33,6 +36,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T16:45:00'),
     scene: Scene.MF,
     band: 'THE CALLOUS DABOYS',
+    isPurple: false,
   },
   {
     id: '5',
@@ -41,6 +45,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T18:00:00'),
     scene: Scene.DM,
     band: 'HELLDEBERT',
+    isPurple: false,
   },
   {
     id: '6',
@@ -49,38 +54,43 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T18:00:00'),
     scene: Scene.BD,
     band: 'LAZULI',
+    isPurple: false,
   },
   {
     id: '7',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T16:45:00'),
-    end: new Date('2025-08-14T18:00:00'),
+    start: new Date('2025-08-14T18:00:05'),
+    end: new Date('2025-08-14T18:50:00'),
     scene: Scene.SS,
     band: 'GUTALAX',
+    isPurple: true,
   },
   {
     id: '8',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T18:15:00'),
+    start: new Date('2025-08-14T18:00:00'),
     end: new Date('2025-08-14T18:50:00'),
     scene: Scene.MF,
     band: 'YEAR OF NO LIGHT',
+    isPurple: true,
   },
   {
     id: '9',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T18:15:00'),
+    start: new Date('2025-08-14T18:55:00'),
     end: new Date('2025-08-14T19:55:00'),
     scene: Scene.BD,
     band: 'ME & THAT MAN',
+    isPurple: true,
   },
   {
     id: '10',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T18:15:00'),
+    start: new Date('2025-08-14T18:55:00'),
     end: new Date('2025-08-14T19:55:00'),
     scene: Scene.DM,
     band: 'TESSERACT',
+    isPurple: true,
   },
   {
     id: '11',
@@ -89,6 +99,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T20:50:00'),
     scene: Scene.MF,
     band: 'NE OBLIVISCARIS',
+    isPurple: false,
   },
   {
     id: '12',
@@ -97,6 +108,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T20:50:00'),
     scene: Scene.SS,
     band: 'NAILBOMB',
+    isPurple: false,
   },
   {
     id: '13',
@@ -105,6 +117,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T21:55:00'),
     scene: Scene.DM,
     band: 'MOGWAI',
+    isPurple: false,
   },
   {
     id: '14',
@@ -113,6 +126,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T21:55:00'),
     scene: Scene.BD,
     band: 'WITCHCRAFT',
+    isPurple: false,
   },
   {
     id: '15',
@@ -121,6 +135,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T23:10:00'),
     scene: Scene.MF,
     band: 'MAGMA',
+    isPurple: true,
   },
   {
     id: '16',
@@ -129,6 +144,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-14T23:10:00'),
     scene: Scene.SS,
     band: 'KATAKLYSM',
+    isPurple: true,
   },
   {
     id: '17',
@@ -137,6 +153,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-15T00:25:00'),
     scene: Scene.DM,
     band: 'I PREVAIL',
+    isPurple: true,
   },
   {
     id: '18',
@@ -144,7 +161,8 @@ export const jeudi: SlotJSON[] = [
     start: new Date('2025-08-14T23:15:00'),
     end: new Date('2025-08-15T00:25:00'),
     scene: Scene.BD,
-    band: 'DJIN',
+    band: 'DIIV',
+    isPurple: true,
   },
   {
     id: '19',
@@ -153,6 +171,7 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-15T01:30:00'),
     scene: Scene.MF,
     band: 'DOOL',
+    isPurple: false,
   },
   {
     id: '20',
@@ -161,5 +180,6 @@ export const jeudi: SlotJSON[] = [
     end: new Date('2025-08-15T01:30:00'),
     scene: Scene.SS,
     band: 'SAMAEL',
+    isPurple: false,
   },
 ];
