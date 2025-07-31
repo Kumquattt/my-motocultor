@@ -1,11 +1,14 @@
 <div class="page">
-  <section class="slots-columns">
-    @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
-    <div class="slots-by-scene-with-header">
-      <!-- TODO keep scene name at the top -->
+    <section class="scene-headers">
+      @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
       <section class="header-scene-name">
         <h2>{{ sceneSlots[0] }}</h2>
       </section>
+      }
+    </section>
+  <section class="slots-columns">
+    @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
+    <div class="slots-by-scene-with-header">
       <section class="slots">
         <section
           [hidden]="!sceneNeedsSpacer(sceneSlots[0])"

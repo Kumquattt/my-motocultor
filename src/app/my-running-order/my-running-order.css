@@ -8,6 +8,29 @@
   overflow: scroll;
 }
 
+.scene-headers {
+  min-height: 70px;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  border-bottom: 1px solid var(--motoc-dark-red);
+  text-overflow: ellipsis;
+}
+/* TODO block height */
+.header-scene-name {
+  flex: 1 1;
+  overflow: hidden;
+  padding: 4px 3px;
+  margin: 0px 3px;
+  text-overflow: ellipsis;
+  h2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: var(--motoc-dark-red);
+  }
+}
 .slots-columns {
   display: flex;
   overflow-y: scroll;
@@ -20,19 +43,6 @@
   /* TODO see when filled with complete running order if needed */
   /* background-color: var(--anthracite); */
   /* border-radius: 8px; */
-}
-
-/* TODO block height */
-.header-scene-name {
-  height: 80px;
-  padding: 0px 3px 4px;
-  h2 {
-    color: var(--motoc-purple);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-  }
-  border-bottom: 1px solid var(--motoc-purple);
 }
 
 .slots {
