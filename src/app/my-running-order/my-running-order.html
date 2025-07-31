@@ -18,6 +18,10 @@
     }
   </section>
   <section class="slots-menu-footer">
+    <app-day-button class="isAll clickable-div" (click)="selectDay(null)"/>
+    @for (day of Days; track day[0]) {
+    <app-day-button class="clickable-div" [day]="day[1]" (click)="selectDay(day[1])" />
+    }
     <button
       class="toggle-favorites-only clickable-div"
       [class.favorite-toggle-disabled]="!showFavoritesOnly()"

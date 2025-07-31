@@ -6,15 +6,15 @@ export enum Scene {
 }
 
 export enum Day {
-  JEUDI = 'Thursday',
-  VENDREDI = 'Friday',
-  SAMEDI = 'Saturday',
-  DIMANCHE = 'Sunday',
+  JEUDI = 'Jeudi', //'Thursday',
+  VENDREDI = 'Vendredi', //'Friday',
+  SAMEDI = 'Samedi', //'Saturday',
+  DIMANCHE = 'Dimanche', //'Sunday',
 }
 
 export const slotsPerDay: Map<Day, number> = new Map([
-    [Day.JEUDI, 5],
-    [Day.VENDREDI, 8],
-    [Day.SAMEDI, 8],
-    [Day.DIMANCHE, 8],
-])
+  [Day.JEUDI, 5],
+  [Day.VENDREDI, 8],
+  [Day.SAMEDI, 8],
+  [Day.DIMANCHE, 8],
+]);

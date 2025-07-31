@@ -50,7 +50,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T10:00:00'),
     new Date('2023-10-05T11:00:00'),
     Scene.DM,
-    'bandA'
+    'bandAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
   ),
   new Slot(
     'id2',

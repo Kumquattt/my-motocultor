@@ -1,19 +1,21 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Scene } from '../my-motocultor/Enums';
+import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot, slotsBaseList } from '../my-motocultor/Slots';
+import { DayButton } from './day-button/day-button';
 import { SlotComponent } from './slot/slot';
 
 @Component({
   selector: 'app-my-running-order',
-  imports: [FormsModule, SlotComponent],
+  imports: [FormsModule, SlotComponent, DayButton],
   templateUrl: './my-running-order.html',
   styleUrl: './my-running-order.css',
 })
 export class MyRunningOrder {
   //// VARIABLES ////
   localStorageService = inject(LocalStorageService);
+  Days = Object.entries(Day);
 
   slots = signal<Slot[]>(
     slotsBaseList.sort((a, b) => a.start.getTime() - b.start.getTime())
@@ -28,8 +30,14 @@ export class MyRunningOrder {
       : this.slots();
     return shownSlots;
   });
+  selectedDay = signal<Day | null>(null);
+  shownSlotsByDay = computed(() =>
+    this.selectedDay()
+      ? this.shownSlots().filter((slot) => this.selectedDay() == slot.day)
+      : this.shownSlots()
+  );
   shownSlotsByScene = computed<Map<Scene, Slot[]>>(() =>
-    this.#groupByScene(this.shownSlots())
+    this.#groupByScene(this.shownSlotsByDay())
   );
 
   //// METHODS ////
@@ -89,6 +97,16 @@ export class MyRunningOrder {
     this.localStorageService.saveFavoritesSlotsIds(
       favorites.map((slot) => slot.id)
     );
+  }
+
+  // TODO days; if click on current days, remove day
+
+  selectDay(day: Day | null) {
+    if (day && this.selectedDay() == day) {
+      this.selectedDay.set(null);
+    } else {
+      this.selectedDay.set(day);
+    }
   }
 
   toggleShowFavoritesButton() {

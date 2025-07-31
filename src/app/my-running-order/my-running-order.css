@@ -10,16 +10,14 @@
 
 .slots-columns {
   display: flex;
-  flex-direction: row;
-  overflow-y: auto;
+  overflow-y: scroll;
   align-items: flex-start;
 }
 
 .slots-by-scene-with-header {
   flex: 1 1;
-  display: flex;
-  flex-direction: column;
   overflow-x: hidden;
+  flex-direction: column;
   /* TODO see when filled with complete running order if needed */
   /* background-color: var(--anthracite); */
   /* border-radius: 8px; */
@@ -43,19 +41,27 @@
 
 .slots-menu-footer {
   display: flex;
-  flex-direction: row-reverse;
-  font-size: 150%;
-  padding: 10px;
+  flex-direction: row;
+  overflow-y: auto;
+  align-items: stretch;
+  /* justify-content: space-between; */
+  gap: 0px;
+
+  font-size: 100%;
+  padding: 0px 5px;
   border-radius: 8px;
   border: 2px solid var(--motoc-dark-red);
   border-bottom-style: none;
 }
 
 .toggle-favorites-only {
+  margin-left: 20px;
   background-color: transparent;
   border: 2px solid gold;
   border-radius: 100%;
   padding: 0.2rem 0.3rem 0.4rem 0.4rem;
+  margin: 5px 0px;
+  margin-left: 10px;
   font-size: 100%;
   /* padding-left: 0.5%; */
 
@@ -68,4 +74,14 @@
   color: transparent;
   text-shadow: 0 0 0 #cc2e75;
   filter: saturate(00%);
+}
+
+app-day-button {
+  flex: 1 1;
+  overflow-x: hidden;
+  &.isAll {
+    flex: 0.51 0.5;
+  }
+
+  border: 1px dotted white;
 }

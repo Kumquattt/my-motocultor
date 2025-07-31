@@ -1,0 +1,8 @@
+<div
+  class="day-button"
+  [class.selected]="isSelected()"
+  [class.isAll]="day() == '*'"
+  (click)="selectDay()"
+>
+  {{ day() }}
+</div>

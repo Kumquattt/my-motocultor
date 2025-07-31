@@ -1,0 +1,17 @@
+.day-button {
+  border: 1 dotted white;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: red;
+
+  &.isSelected {
+    color: gold;
+  }
+}
+
+* {
+  &.isAll {
+    color: green;
+  }
+}
