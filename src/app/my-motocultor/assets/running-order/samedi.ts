@@ -52,7 +52,7 @@ export const samedi: SlotJSON[] = [
     day: Day.SAMEDI,
     start: new Date('2025-08-16T14:15:00'),
     end: new Date('2025-08-16T14:55:00'),
-    scene: Scene.MF,
+    scene: Scene.BD,
     band: 'Aggressive Agricultor',
     isPurple: false,
   },

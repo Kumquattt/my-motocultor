@@ -59,7 +59,7 @@ export const jeudi: SlotJSON[] = [
   {
     id: '7',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T18:00:05'),
+    start: new Date('2025-08-14T18:05:00'),
     end: new Date('2025-08-14T18:50:00'),
     scene: Scene.SS,
     band: 'GUTALAX',
@@ -68,7 +68,7 @@ export const jeudi: SlotJSON[] = [
   {
     id: '8',
     day: Day.JEUDI,
-    start: new Date('2025-08-14T18:00:00'),
+    start: new Date('2025-08-14T18:05:00'),
     end: new Date('2025-08-14T18:50:00'),
     scene: Scene.MF,
     band: 'YEAR OF NO LIGHT',

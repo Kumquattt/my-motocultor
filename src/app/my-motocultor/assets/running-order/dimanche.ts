@@ -53,7 +53,7 @@ export const dimanche: SlotJSON[] = [
     start: new Date('2025-08-17T13:15:00'),
     end: new Date('2025-08-17T13:55:00'),
     band: 'WYATT E',
-    scene: Scene.MF,
+    scene: Scene.BD,
     isPurple: false,
   },
   {
