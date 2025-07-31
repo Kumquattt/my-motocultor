@@ -1,11 +1,12 @@
 .slot {
-  border-radius: 8px;
-  min-height: 100px;
-  height: 100px;
-  padding: 10px;
+  border-radius: 5px;
+  height: var(--slot-height);
+  padding: var(--slot-padding);
   margin: 5px;
   overflow: hidden;
   overflow-x: hidden;
+
+  color: var(--black);
 }
 
 .slot-a {
@@ -18,4 +19,17 @@
 .is-favorite {
   border: solid 3px gold;
   margin: 2px;
+}
+
+.band {
+  font-size: 1.2rem;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+.time {
+  font-size: 1rem;
+}
+.end {
+  text-align: right;
 }

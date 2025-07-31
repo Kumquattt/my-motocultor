@@ -15,4 +15,11 @@ export class SlotComponent {
   toggleFavoriteSlot() {
     this.favoriteToggle.emit()
   }
+
+  printTime(time: Date): string {
+    const hours = time.getHours()
+    const minutes = time.getMinutes() == 0 ? '00' : time.getMinutes()
+
+    return `${hours}:${minutes}`
+  }
 }

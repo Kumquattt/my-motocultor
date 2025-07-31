@@ -1,9 +1,10 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { jeudi } from '../my-motocultor/assets/running-order/jeudi';
 import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
-import { Slot, slotsBaseList } from '../my-motocultor/Slots';
-import { SlotComponent } from './slot/slot';
+import { Slot } from '../my-motocultor/Slots';
+import { SlotComponent } from './slot/slot-component';
 
 @Component({
   selector: 'app-my-running-order',
@@ -39,17 +40,7 @@ export class MyRunningOrder {
 
   //// METHODS ////
   constructor() {
-    console.log(this.slots());
-    const favoritedSlotsIds =
-      this.localStorageService.getSavedFavoriteSlotsIds();
-    if (favoritedSlotsIds) {
-      const savedSlots: Slot[] = this.slots().map((slot) =>
-        favoritedSlotsIds.includes(slot.id)
-          ? { ...slot, isFavorite: true }
-          : slot
-      );
-      this.slots.set(savedSlots);
-    }
+    this.#updateFromSavedFavorites();
 
     this.showFavoritesOnly.set(
       this.localStorageService.getSavedShowFavoritesToggle()
@@ -60,6 +51,19 @@ export class MyRunningOrder {
         this.showFavoritesOnly()
       );
     });
+  }
+
+  #updateFromSavedFavorites() {
+    const favoritedSlotsIds =
+      this.localStorageService.getSavedFavoriteSlotsIds();
+    if (favoritedSlotsIds) {
+      const savedSlots: Slot[] = this.slots().map((slot) =>
+        favoritedSlotsIds.includes(slot.id)
+          ? { ...slot, isFavorite: true }
+          : slot
+      );
+      this.slots.set(savedSlots);
+    }
   }
 
   #groupByScene(slots: Slot[]): Map<Scene, Slot[]> {
@@ -113,13 +117,17 @@ export class MyRunningOrder {
   }
 
   #initializeSlots(): Slot[] {
-    const slots = slotsBaseList.sort(
-      (a, b) => a.start.getTime() - b.start.getTime()
-    );
+    const slots = jeudi
+      .map((jsonSlot) => Slot.fromJSON(jsonSlot))
+      .sort((a, b) => a.start.getTime() - b.start.getTime());
     // For coloring
     for (let index = 1; index < slots.length; index += 2) {
-       slots[index].isEven = false;
-     }
+      slots[index].isEven = false;
+    }
     return slots;
+  }
+
+  isEvenScene(scene: Scene) {
+    return [Scene.MF, Scene.SS].includes(scene);
   }
 }

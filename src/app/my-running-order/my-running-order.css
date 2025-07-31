@@ -17,7 +17,6 @@
 .slots-by-scene-with-header {
   flex: 1 1;
   overflow-x: hidden;
-  flex-direction: column;
   /* TODO see when filled with complete running order if needed */
   /* background-color: var(--anthracite); */
   /* border-radius: 8px; */
@@ -25,19 +24,25 @@
 
 /* TODO block height */
 .header-scene-name {
-  padding: 3px;
+  height: 80px;
+  padding: 0px 3px 4px;
   h2 {
     color: var(--motoc-purple);
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
   }
+  border-bottom: 1px solid var(--motoc-purple);
 }
 
 .slots {
   display: flex;
   flex-direction: column;
   overflow-y: visible;
+}
+.spacer {
+  height: var(--slot-height);
+  padding: var(--slot-padding);
 }
 
 .slots-menu-footer {

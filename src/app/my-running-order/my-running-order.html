@@ -2,16 +2,18 @@
   <section class="slots-columns">
     @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
     <div class="slots-by-scene-with-header">
+      <!-- TODO keep scene name at the top -->
       <section class="header-scene-name">
         <h2>{{ sceneSlots[0] }}</h2>
       </section>
       <section class="slots">
+        <section [hidden]="isEvenScene(sceneSlots[0])" class="spacer"></section>
         @for(slot of sceneSlots[1]; track slot.id) {
-        <!-- TODO keep scene name at the top -->
         <app-slot-component
           [slotInput]="slot"
           (favoriteToggle)="toggleFavoriteSlot(slot)"
         />
+        <section class="spacer"></section>
         }
       </section>
     </div>

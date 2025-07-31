@@ -1,12 +1,31 @@
 import { Day, Scene } from './Enums';
 
-export class Slot {
+export class SlotJSON {
   id: string;
   day: Day;
   start: Date;
   end: Date;
   scene: Scene;
   band: string;
+
+  constructor(
+    id: string,
+    day: Day,
+    start: Date,
+    end: Date,
+    scene: Scene,
+    band: string
+  ) {
+    this.id = id;
+    this.day = day;
+    this.start = start;
+    this.end = end;
+    this.scene = scene;
+    this.band = band;
+  }
+}
+
+export class Slot extends SlotJSON {
   isEven: boolean = true;
   isFavorite: boolean = false;
 
@@ -16,31 +35,13 @@ export class Slot {
     start: Date,
     end: Date,
     scene: Scene,
-    band: string,
-    isFavorite: boolean = false
+    band: string
   ) {
-    this.id = id;
-    this.day = day;
-    this.start = start;
-    this.end = end;
-    this.scene = scene;
-    this.band = band;
-    this.isFavorite = isFavorite;
+    super(id, day, start, end, scene, band);
   }
 
-  public static fromJSON(data: unknown): Slot {
-    typeof data == 'object';
-    const slot = data as Slot;
-
-    return new Slot(
-      slot.id,
-      slot.day,
-      new Date(slot.start),
-      new Date(slot.end),
-      slot.scene,
-      slot.band,
-      slot.isFavorite
-    );
+  public static fromJSON(jsonSlot: SlotJSON): Slot {
+    return { ...jsonSlot, isEven: true, isFavorite: false };
   }
 }
 

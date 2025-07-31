@@ -6,9 +6,11 @@
   [class.is-favorite]="slot!.isFavorite"
   (click)="toggleFavoriteSlot()"
 >
-  <div>{{ slot!.day }}</div>
-  <div>{{ slot!.band }}</div>
-  <div>{{ slot!.start.getHours() }}h{{ slot!.start.getMinutes() }}</div>
-  <div>{{ slot!.end.getHours() }}h{{ slot!.end.getMinutes() }}</div>
+  <!-- <div>{{ slot!.day }}</div> -->
+  <div class="band hide-scrollbars">{{ slot!.band }}</div>
+  <div class="time">
+    {{ printTime(slot!.start) }}
+    <div class="end">> {{ printTime(slot!.end) }}</div>
+  </div>
 </section>
 }
