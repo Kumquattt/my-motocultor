@@ -1,7 +1,29 @@
 # MyMotocultor 🤘
 
-This is a simple web page to track your running-order at the Motocultor 2025, as I could not find any official one. <br/>
-Simply select the bands you want to see, press the star button, and only your those are visible ! You can also filter by day.
+<img src="./src/app/my-motocultor/assets/french-flag.svg" alt="drawing" width="20"/> <br/>
+Ce projet est une simple page web pour avoir votre propre running-order au Motocultor 2025, créé parce que je n'ai pas trouvé d'équivalent officiel.<br/>
+Sélectionnez simplement les groupes que vous souhaitez voir, appuyez sur l'étoile et seuls ces groupes seront visibles ! <br/>
+Vous pouvez également filtrer par jour. <br/>
+
+**Des suggestions ou bugs à remonter ?** => passez par [ce formulaire](https://forms.gle/TZiXMasxtc5g9AbW6) !
+
+<br/>
+<br/>
+
+<img src="./src/app/my-motocultor/assets/uk-flag.svg" alt="drawing" width="20"/><br/>
+This is a simple web page to track your running-order at Motocultor 2025, created because I could not find any official one. <br/>
+Simply select the bands you want to see, press the star button, and only those will be visible ! <br/>
+You can also filter by day. <br/>
+
+**Any bug report or suggestion ?** => please fill [this form](https://forms.gle/TZiXMasxtc5g9AbW6) !<br/>
+
+<br />
+<br />
+
+***
+***
+
+<br />
 
 # Build and deployment
 
