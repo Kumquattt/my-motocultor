@@ -1,7 +1,7 @@
 export enum Scene {
   DM = 'Dave Mustage',
   MF = 'Massey Ferguscene',
-  BD = 'Bruck Dickinscene',
+  BD = 'Bruce Dickinscene',
   SS = 'Suppositor Stage',
 }
 

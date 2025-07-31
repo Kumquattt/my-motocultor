@@ -23,6 +23,7 @@
   /* border-radius: 8px; */
 }
 
+/* TODO block height */
 .header-scene-name {
   padding: 3px;
   h2 {
@@ -42,46 +43,70 @@
 .slots-menu-footer {
   display: flex;
   flex-direction: row;
-  overflow-y: auto;
+  overflow-y: hidden;
   align-items: stretch;
-  /* justify-content: space-between; */
+  justify-content: center;
   gap: 0px;
 
-  font-size: 100%;
-  padding: 0px 5px;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   border: 2px solid var(--motoc-dark-red);
   border-bottom-style: none;
+
+  font-size: 100%;
+  text-align: center;
+  /* padding: 0px 5px; */
 }
 
-.toggle-favorites-only {
-  margin-left: 20px;
-  background-color: transparent;
-  border: 2px solid gold;
-  border-radius: 100%;
-  padding: 0.2rem 0.3rem 0.4rem 0.4rem;
-  margin: 5px 0px;
-  margin-left: 10px;
-  font-size: 100%;
-  /* padding-left: 0.5%; */
+.toggle-button-div {
+  padding: 0px 5px;
 
-  &:active {
-    transform: translateY(1px);
+  .toggle-favorites-only {
+    margin-left: 20px;
+    background-color: transparent;
+    border: 2px solid gold;
+    border-radius: 100%;
+    padding: 0.2rem 0.3rem 0.4rem 0.4rem;
+    margin: 5px 0px;
+    margin-left: 10px;
+    font-size: 100%;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+  .favorite-toggle-disabled {
+    border-color: var(--motoc-dark-red);
+    color: transparent;
+    text-shadow: 0 0 0 #cc2e75;
+    filter: saturate(00%);
   }
 }
-.favorite-toggle-disabled {
-  border-color: var(--motoc-dark-red);
-  color: transparent;
-  text-shadow: 0 0 0 #cc2e75;
-  filter: saturate(00%);
-}
 
-app-day-button {
+.day-button {
   flex: 1 1;
-  overflow-x: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-content: center;
+
+  margin: 0 2px;
+  padding: 0 2px;
+  border-radius: 8px;
+
+  &.isSelected {
+    color: gold;
+  }
+
   &.isAll {
     flex: 0.51 0.5;
+    padding-left: 0;
+    margin-left: 0;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
 
-  border: 1px dotted white;
+  &.isSelected {
+    color: var(--black);
+    background-color: var(--slotA);
+  }
 }

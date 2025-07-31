@@ -1,11 +1,13 @@
 @if(slotInput()) { @let slot = slotInput();
 <section
   class="slot"
+  [class.slot-a]="slot!.isEven"
+  [class.slot-b]="!slot!.isEven"
   [class.is-favorite]="slot!.isFavorite"
   (click)="toggleFavoriteSlot()"
 >
-  <div>{{ slot!.band }}</div>
   <div>{{ slot!.day }}</div>
+  <div>{{ slot!.band }}</div>
   <div>{{ slot!.start.getHours() }}h{{ slot!.start.getMinutes() }}</div>
   <div>{{ slot!.end.getHours() }}h{{ slot!.end.getMinutes() }}</div>
 </section>

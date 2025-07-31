@@ -3,12 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot, slotsBaseList } from '../my-motocultor/Slots';
-import { DayButton } from './day-button/day-button';
 import { SlotComponent } from './slot/slot';
 
 @Component({
   selector: 'app-my-running-order',
-  imports: [FormsModule, SlotComponent, DayButton],
+  imports: [FormsModule, SlotComponent],
   templateUrl: './my-running-order.html',
   styleUrl: './my-running-order.css',
 })
@@ -17,9 +16,7 @@ export class MyRunningOrder {
   localStorageService = inject(LocalStorageService);
   Days = Object.entries(Day);
 
-  slots = signal<Slot[]>(
-    slotsBaseList.sort((a, b) => a.start.getTime() - b.start.getTime())
-  );
+  slots = signal<Slot[]>(this.#initializeSlots());
   favoritedSlots = computed(() =>
     this.slots().filter((slot) => slot.isFavorite)
   );
@@ -42,9 +39,9 @@ export class MyRunningOrder {
 
   //// METHODS ////
   constructor() {
+    console.log(this.slots());
     const favoritedSlotsIds =
       this.localStorageService.getSavedFavoriteSlotsIds();
-    console.log(favoritedSlotsIds);
     if (favoritedSlotsIds) {
       const savedSlots: Slot[] = this.slots().map((slot) =>
         favoritedSlotsIds.includes(slot.id)
@@ -77,7 +74,6 @@ export class MyRunningOrder {
   }
 
   toggleFavoriteSlot(toggledSlot: Slot) {
-    console.log('parent toggle faved');
     this.slots.update((currentSlots) =>
       currentSlots.map((currentSlot) =>
         this.#toggleFavoriteIfEquals(currentSlot, toggledSlot)
@@ -108,8 +104,22 @@ export class MyRunningOrder {
       this.selectedDay.set(day);
     }
   }
+  isSelected(day: Day | null) {
+    return day == this.selectedDay();
+  }
 
   toggleShowFavoritesButton() {
     this.showFavoritesOnly.update((state) => !state);
+  }
+
+  #initializeSlots(): Slot[] {
+    const slots = slotsBaseList.sort(
+      (a, b) => a.start.getTime() - b.start.getTime()
+    );
+    // For coloring
+    for (let index = 1; index < slots.length; index += 2) {
+       slots[index].isEven = false;
+     }
+    return slots;
   }
 }

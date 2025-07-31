@@ -18,17 +18,31 @@
     }
   </section>
   <section class="slots-menu-footer">
-    <app-day-button class="isAll clickable-div" (click)="selectDay(null)"/>
-    @for (day of Days; track day[0]) {
-    <app-day-button class="clickable-div" [day]="day[1]" (click)="selectDay(day[1])" />
-    }
-    <button
-      class="toggle-favorites-only clickable-div"
-      [class.favorite-toggle-disabled]="!showFavoritesOnly()"
-      (click)="toggleShowFavoritesButton()"
+    <div
+      class="day-button isAll clickable-div"
+      [class.isSelected]="isSelected(null)"
+      (click)="selectDay(null)"
     >
-      ⭐
-    </button>
+      *
+    </div>
+    @for (day of Days; track day[0]) {
+    <div
+      class="day-button clickable-div"
+      [class.isSelected]="isSelected(day[1])"
+      (click)="selectDay(day[1])"
+    >
+      <span>{{ day[1] }}</span>
+    </div>
+    }
+    <div class="toggle-button-div">
+      <button
+        class="toggle-favorites-only clickable-div"
+        [class.favorite-toggle-disabled]="!showFavoritesOnly()"
+        (click)="toggleShowFavoritesButton()"
+      >
+        ⭐
+      </button>
+    </div>
   </section>
 </div>
 <!-- TODO

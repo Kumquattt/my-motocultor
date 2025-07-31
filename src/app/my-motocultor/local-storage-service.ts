@@ -9,14 +9,12 @@ export class LocalStorageService {
 
   getSavedFavoriteSlotsIds(): string[] | null {
     const savedSlotsJSON = localStorage.getItem(this.localStorageFavoritesKey);
-    console.log(savedSlotsJSON);
     try {
       if (savedSlotsJSON) {
-        console.log('a');
         return JSON.parse(savedSlotsJSON) as string[];
       }
     } catch (error) {
-      console.log('Issue when fetching slots from local storage: ' + error);
+      console.error('Issue when fetching slots from local storage: ' + error);
     }
     return null;
   }

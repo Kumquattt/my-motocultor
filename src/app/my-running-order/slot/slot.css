@@ -1,5 +1,4 @@
 .slot {
-  background: var(--wisteria);
   border-radius: 8px;
   min-height: 100px;
   height: 100px;
@@ -7,6 +6,13 @@
   margin: 5px;
   overflow: hidden;
   overflow-x: hidden;
+}
+
+.slot-a {
+  background-color: var(--slotA);
+}
+.slot-b {
+  background-color: var(--slotB);
 }
 
 .is-favorite {

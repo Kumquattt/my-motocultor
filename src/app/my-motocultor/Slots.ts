@@ -7,6 +7,7 @@ export class Slot {
   end: Date;
   scene: Scene;
   band: string;
+  isEven: boolean = true;
   isFavorite: boolean = false;
 
   constructor(
