@@ -44,6 +44,7 @@ export class MyRunningOrder {
   //// METHODS ////
   constructor() {
     this.#updateFromSavedFavorites();
+    this.#updateFromSavedDay();
 
     this.showFavoritesOnly.set(
       this.localStorageService.getSavedShowFavoritesToggle()
@@ -66,6 +67,13 @@ export class MyRunningOrder {
           : slot
       );
       this.slots.set(savedSlots);
+    }
+  }
+
+  #updateFromSavedDay() {
+    const savedDay = this.localStorageService.getSavedDay();
+    if (savedDay) {
+      this.selectedDay.set(savedDay);
     }
   }
 
@@ -110,6 +118,7 @@ export class MyRunningOrder {
     } else {
       this.selectedDay.set(day);
     }
+    this.localStorageService.saveDay(day)
   }
   isSelected(day: Day | null) {
     return day == this.selectedDay();
