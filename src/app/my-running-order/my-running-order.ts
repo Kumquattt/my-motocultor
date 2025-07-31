@@ -1,6 +1,7 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Scene } from '../my-motocultor/Enums';
+import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot, slotsBaseList } from '../my-motocultor/Slots';
 import { SlotComponent } from './slot/slot';
 
@@ -11,8 +12,8 @@ import { SlotComponent } from './slot/slot';
   styleUrl: './my-running-order.css',
 })
 export class MyRunningOrder {
-  localStorageFavoritesKey = 'favoritesSlots';
-  localStorageFavoritesToggle = 'favoritesToggle';
+  //// VARIABLES ////
+  localStorageService = inject(LocalStorageService);
 
   slots = signal<Slot[]>(
     slotsBaseList.sort((a, b) => a.start.getTime() - b.start.getTime())
@@ -27,34 +28,31 @@ export class MyRunningOrder {
       : this.slots();
     return shownSlots;
   });
-  shownSlotsByScene = computed(() => this.#groupByScene(this.shownSlots()));
+  shownSlotsByScene = computed<Map<Scene, Slot[]>>(() =>
+    this.#groupByScene(this.shownSlots())
+  );
 
+  //// METHODS ////
   constructor() {
-    const savedSlotsJSON = localStorage.getItem(this.localStorageFavoritesKey);
-    if (savedSlotsJSON) {
-      try {
-        const favoritesSlotsIds = JSON.parse(savedSlotsJSON) as string[];
-        const savedSlots: Slot[] = this.slots().map((slot) =>
-          favoritesSlotsIds.includes(slot.id)
-            ? { ...slot, isFavorite: true }
-            : slot
-        );
-        this.slots.set(savedSlots);
-      } catch (error) {
-        console.log('Issue when fetching slots from local storage: ' + error);
-      }
+    const favoritedSlotsIds =
+      this.localStorageService.getSavedFavoriteSlotsIds();
+    console.log(favoritedSlotsIds);
+    if (favoritedSlotsIds) {
+      const savedSlots: Slot[] = this.slots().map((slot) =>
+        favoritedSlotsIds.includes(slot.id)
+          ? { ...slot, isFavorite: true }
+          : slot
+      );
+      this.slots.set(savedSlots);
     }
 
     this.showFavoritesOnly.set(
-      JSON.parse(
-        localStorage.getItem(this.localStorageFavoritesToggle) || 'false'
-      )
+      this.localStorageService.getSavedShowFavoritesToggle()
     );
     effect(() => {
-      console.log('save favorite toggle');
-      localStorage.setItem(
-        this.localStorageFavoritesToggle,
-        JSON.stringify(this.showFavoritesOnly())
+      console.log('Saving favorite toggle');
+      this.localStorageService.saveShowFarovitesToggle(
+        this.showFavoritesOnly()
       );
     });
   }
@@ -88,9 +86,8 @@ export class MyRunningOrder {
   #saveSlots() {
     console.log('Saving slots');
     const favorites = this.favoritedSlots();
-    localStorage.setItem(
-      this.localStorageFavoritesKey,
-      JSON.stringify(favorites.map((slot) => slot.id))
+    this.localStorageService.saveFavoritesSlotsIds(
+      favorites.map((slot) => slot.id)
     );
   }
 

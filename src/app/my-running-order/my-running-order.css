@@ -13,7 +13,6 @@
   flex-direction: row;
   overflow-y: auto;
   align-items: flex-start;
-  gap: 3px;
 }
 
 .slots-by-scene-with-header {
@@ -21,14 +20,15 @@
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  background-color: var(--anthracite);
-  border-radius: 8px;
+  /* TODO see when filled with complete running order if needed */
+  /* background-color: var(--anthracite); */
+  /* border-radius: 8px; */
 }
 
 .header-scene-name {
   padding: 3px;
   h2 {
-    /* color: var(--motoc-dark-red); */
+    color: var(--motoc-purple);
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
