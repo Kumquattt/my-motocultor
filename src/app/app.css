@@ -9,12 +9,20 @@
 
 .header {
   margin: 0;
-  padding: 10px;
-  h1 {
+  border-bottom: 2px solid var(--slotA);
+
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    padding: 10px;
     margin: 1px;
     font-size: 150%;
   }
-  border-bottom: 2px solid var(--slotA);
+
+  .info {
+    filter: saturate(30%);
+  }
 }
 
 .content {
