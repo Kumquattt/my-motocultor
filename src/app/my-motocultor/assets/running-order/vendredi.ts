@@ -267,7 +267,7 @@ export const vendredi: SlotJSON[] = [
     id: '29',
     day: Day.VENDREDI,
     start: new Date('2025-08-15T01:25:00'),
-    end: new Date('2025-08-15T05:25:00'),
+    end: new Date('2025-08-15T02:25:00'),
     scene: Scene.BD,
     band: 'Sir Reg',
     isPurple: false,
