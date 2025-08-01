@@ -38,3 +38,16 @@
 .end {
   text-align: right;
 }
+
+.is-jeudi {
+  background-color: red;
+}
+.is-vendredi {
+  background-color: purple;
+}
+.is-samedi {
+  background-color: green;
+}
+.is-dimanche {
+  background-color: yellow;
+}
