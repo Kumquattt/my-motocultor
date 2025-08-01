@@ -48,7 +48,7 @@ export const vendredi: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '2',
+    id: '2.1',
     day: Day.VENDREDI,
     start: new Date('2025-08-15T14:15:00'),
     end: new Date('2025-08-15T14:55:00'),

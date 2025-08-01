@@ -35,7 +35,7 @@ export const jeudi: SlotJSON[] = [
     start: new Date('2025-08-14T16:00:00'),
     end: new Date('2025-08-14T16:45:00'),
     scene: Scene.MF,
-    band: 'THE CALLOUS DABOYS',
+    band: 'THE CALLOUS DAOBOYS',
     isPurple: false,
   },
   {
@@ -80,7 +80,7 @@ export const jeudi: SlotJSON[] = [
     start: new Date('2025-08-14T18:55:00'),
     end: new Date('2025-08-14T19:55:00'),
     scene: Scene.BD,
-    band: 'ME & THAT MAN',
+    band: 'ME AND THAT MAN',
     isPurple: true,
   },
   {
