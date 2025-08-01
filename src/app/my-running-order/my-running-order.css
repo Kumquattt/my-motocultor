@@ -32,6 +32,8 @@
   }
 }
 .slots-columns {
+  flex-grow: 1;
+
   display: flex;
   overflow-y: scroll;
   align-items: flex-start;
