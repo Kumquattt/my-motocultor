@@ -46,7 +46,6 @@ export class MyRunningOrder {
       this.localStorageService.getSavedShowFavoritesToggle()
     );
     effect(() => {
-      console.log('Saving favorite toggle');
       this.localStorageService.saveShowFarovitesToggle(
         this.showFavoritesToggle()
       );
@@ -99,7 +98,6 @@ export class MyRunningOrder {
   }
 
   #saveSlots() {
-    console.log('Saving slots');
     const favorites = this.favoritedSlots();
     this.localStorageService.saveFavoritesSlotsIds(
       favorites.map((slot) => slot.id)

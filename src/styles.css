@@ -48,12 +48,13 @@ body {
     display: none;
   }
   -ms-overflow-style: none; /* IE and Edge */
+
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   scrollbar-width: none; /* Firefox */
 }
 
 @font-face {
   font-family: MarvinVisionsBig;
-  src: url(app/my-motocultor/assets/MarvinVisions-Bold.woff2);
+  src: local(MarvinVisionsBig),
+    url(app/my-motocultor/assets/MarvinVisions-Bold.woff2);
 }
-
-/* TODO starry night background ? */
