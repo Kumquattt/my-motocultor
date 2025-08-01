@@ -11,13 +11,14 @@
     <div class="slots-by-scene-with-header">
       <section class="slots">
         <section
-          [hidden]="!sceneNeedsSpacer(sceneSlots[0])"
+          [hidden]="!sceneNeedsInitialSpacer(sceneSlots[0])"
           class="spacer"
         ></section>
         @for(slot of sceneSlots[1]; track slot.band) {
         <app-slot-component
           [slotInput]="slot"
           (favoriteToggle)="toggleFavoriteSlot(slot)"
+          [class.dim]="showFavoritesToggle() && !slot.isFavorite"
         />
         <section class="spacer"></section>
         }
@@ -46,7 +47,7 @@
     <div class="toggle-button-div">
       <button
         class="toggle-favorites-only clickable-div"
-        [class.favorite-toggle-disabled]="!showFavoritesOnly()"
+        [class.favorite-toggle-disabled]="!showFavoritesToggle()"
         (click)="toggleShowFavoritesButton()"
       >
         ⭐

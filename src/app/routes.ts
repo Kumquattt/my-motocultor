@@ -6,6 +6,6 @@ export const routes: Routes = [
   {
     path: '',
     component: MyRunningOrder,
-    title: 'My Motocultor',
+    title: 'My Motocultor 🤘',
   },
 ];

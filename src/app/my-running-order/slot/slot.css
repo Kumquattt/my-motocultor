@@ -17,7 +17,7 @@
 }
 
 .is-favorite {
-  border: solid 3px gold;
+  border: inset 3px gold;
   margin: 2px;
 }
 

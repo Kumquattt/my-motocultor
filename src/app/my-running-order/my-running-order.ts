@@ -24,13 +24,9 @@ export class MyRunningOrder {
   favoritedSlots = computed(() =>
     this.slots().filter((slot) => slot.isFavorite)
   );
-  showFavoritesOnly = signal(false);
-  shownSlots = computed(() => {
-    const shownSlots = this.showFavoritesOnly()
-      ? this.favoritedSlots()
-      : this.slots();
-    return shownSlots;
-  });
+  showFavoritesToggle = signal(false);
+  // No filter: keep non-favorites but dimmed
+  shownSlots = computed(() => this.slots());
   selectedDay = signal<Day | null>(null);
   shownSlotsByDay = computed(() =>
     this.selectedDay()
@@ -46,13 +42,13 @@ export class MyRunningOrder {
     this.#updateFromSavedFavorites();
     this.#updateFromSavedDay();
 
-    this.showFavoritesOnly.set(
+    this.showFavoritesToggle.set(
       this.localStorageService.getSavedShowFavoritesToggle()
     );
     effect(() => {
       console.log('Saving favorite toggle');
       this.localStorageService.saveShowFarovitesToggle(
-        this.showFavoritesOnly()
+        this.showFavoritesToggle()
       );
     });
   }
@@ -110,22 +106,20 @@ export class MyRunningOrder {
     );
   }
 
-  // TODO days; if click on current days, remove day
-
   selectDay(day: Day | null) {
     if (day && this.selectedDay() == day) {
       this.selectedDay.set(null);
     } else {
       this.selectedDay.set(day);
     }
-    this.localStorageService.saveDay(day)
+    this.localStorageService.saveDay(day);
   }
   isSelected(day: Day | null) {
     return day == this.selectedDay();
   }
 
   toggleShowFavoritesButton() {
-    this.showFavoritesOnly.update((state) => !state);
+    this.showFavoritesToggle.update((state) => !state);
   }
 
   #initializeSlots(): Slot[] {
@@ -136,7 +130,7 @@ export class MyRunningOrder {
     return slots;
   }
 
-  sceneNeedsSpacer(scene: Scene) {
+  sceneNeedsInitialSpacer(scene: Scene) {
     return [Scene.MF, Scene.SS].includes(scene);
   }
 }
