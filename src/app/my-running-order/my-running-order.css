@@ -6,7 +6,7 @@
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
-  background-color: var(--black);
+  background-image: url(../my-motocultor/assets/motocultor25_fond.webp)
 }
 
 .scene-headers {
