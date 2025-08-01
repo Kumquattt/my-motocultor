@@ -24,4 +24,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         BRANCH: gh-pages #default branch deployed from, but can be configured
-        FOLDER: dist
+        FOLDER: dist/browser
