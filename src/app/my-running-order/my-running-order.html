@@ -12,15 +12,15 @@
       <section class="slots">
         <section
           [hidden]="!sceneNeedsInitialSpacer(sceneSlots[0])"
-          class="spacer"
+          class="Before spacer"
         ></section>
-        @for(slot of sceneSlots[1]; track slot.band) {
+        @for(slot of sceneSlots[1]; track slot.id) {
         <app-slot-component
           [slotInput]="slot"
           (favoriteToggle)="toggleFavoriteSlot(slot)"
           [class.dim]="showFavoritesToggle() && !slot.isFavorite"
         />
-        <section class="spacer"></section>
+        <section class="After spacer"></section>
         }
       </section>
     </div>

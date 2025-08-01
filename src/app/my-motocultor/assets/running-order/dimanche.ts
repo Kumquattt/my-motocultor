@@ -3,7 +3,7 @@ import { SlotJSON } from '../../Slots';
 
 export const dimanche: SlotJSON[] = [
   {
-    id: '211',
+    id: 'd-211',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T11:45:00'),
     end: new Date('2025-08-17T12:25:00'),
@@ -12,7 +12,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '212',
+    id: 'd-212',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T11:45:00'),
     end: new Date('2025-08-17T12:25:00'),
@@ -21,7 +21,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '213',
+    id: 'd-213',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T12:30:00'),
     end: new Date('2025-08-17T13:10:00'),
@@ -30,7 +30,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '214',
+    id: 'd-214',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T12:30:00'),
     end: new Date('2025-08-17T13:10:00'),
@@ -39,7 +39,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '215',
+    id: 'd-215',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T13:15:00'),
     end: new Date('2025-08-17T13:55:00'),
@@ -48,7 +48,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '216',
+    id: 'd-216',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T13:15:00'),
     end: new Date('2025-08-17T13:55:00'),
@@ -57,7 +57,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '217',
+    id: 'd-217',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T14:00:00'),
     end: new Date('2025-08-17T14:40:00'),
@@ -66,7 +66,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '218',
+    id: 'd-218',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T14:00:00'),
     end: new Date('2025-08-17T14:40:00'),
@@ -75,7 +75,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '219',
+    id: 'd-219',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T14:45:00'),
     end: new Date('2025-08-17T15:25:00'),
@@ -84,7 +84,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '220',
+    id: 'd-220',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T14:45:00'),
     end: new Date('2025-08-17T15:25:00'),
@@ -93,7 +93,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '221',
+    id: 'd-221',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T15:30:00'),
     end: new Date('2025-08-17T16:15:00'),
@@ -102,7 +102,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '222',
+    id: 'd-222',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T15:30:00'),
     end: new Date('2025-08-17T16:15:00'),
@@ -111,7 +111,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '223',
+    id: 'd-223',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T16:20:00'),
     end: new Date('2025-08-17T17:05:00'),
@@ -120,7 +120,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '224',
+    id: 'd-224',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T16:20:00'),
     end: new Date('2025-08-17T17:05:00'),
@@ -129,7 +129,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '225',
+    id: 'd-225',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T17:10:00'),
     end: new Date('2025-08-17T18:00:00'),
@@ -138,7 +138,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '226',
+    id: 'd-226',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T17:10:00'),
     end: new Date('2025-08-17T18:00:00'),
@@ -147,7 +147,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '227',
+    id: 'd-227',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T18:05:00'),
     end: new Date('2025-08-17T18:55:00'),
@@ -156,7 +156,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '228',
+    id: 'd-228',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T18:05:00'),
     end: new Date('2025-08-17T18:55:00'),
@@ -165,7 +165,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '229',
+    id: 'd-229',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T19:00:00'),
     end: new Date('2025-08-17T19:50:00'),
@@ -174,7 +174,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '230',
+    id: 'd-230',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T19:00:00'),
     end: new Date('2025-08-17T19:50:00'),
@@ -183,7 +183,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '231',
+    id: 'd-231',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T19:55:00'),
     end: new Date('2025-08-17T20:55:00'),
@@ -192,7 +192,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '232',
+    id: 'd-232',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T19:55:00'),
     end: new Date('2025-08-17T20:55:00'),
@@ -201,7 +201,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '233',
+    id: 'd-233',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T21:00:00'),
     end: new Date('2025-08-17T21:50:00'),
@@ -210,7 +210,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '234',
+    id: 'd-234',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T21:00:00'),
     end: new Date('2025-08-17T21:50:00'),
@@ -219,7 +219,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '235',
+    id: 'd-235',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T21:55:00'),
     end: new Date('2025-08-17T22:55:00'),
@@ -228,7 +228,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '236',
+    id: 'd-236',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T21:55:00'),
     end: new Date('2025-08-17T22:55:00'),
@@ -237,7 +237,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: true,
   },
   {
-    id: '237',
+    id: 'd-237',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T23:00:00'),
     end: new Date('2025-08-18T00:00:00'),
@@ -246,7 +246,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '238',
+    id: 'd-238',
     day: Day.DIMANCHE,
     start: new Date('2025-08-17T23:00:00'),
     end: new Date('2025-08-18T00:00:00'),
@@ -255,7 +255,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '239',
+    id: 'd-239',
     day: Day.DIMANCHE,
     start: new Date('2025-08-18T00:05:00'),
     end: new Date('2025-08-18T01:20:00'),
@@ -264,7 +264,7 @@ export const dimanche: SlotJSON[] = [
     isPurple: false,
   },
   {
-    id: '240',
+    id: 'd-240',
     day: Day.DIMANCHE,
     start: new Date('2025-08-18T00:05:00'),
     end: new Date('2025-08-18T01:20:00'),
