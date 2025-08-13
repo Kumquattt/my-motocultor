@@ -116,7 +116,7 @@ export const samedi: SlotJSON[] = [
     start: new Date('2025-08-16T17:25:00'),
     end: new Date('2025-08-16T18:10:00'),
     scene: Scene.DM,
-    band: 'Ill Niño',
+    band: 'TENSIDE',
     isPurple: false,
   },
   {
