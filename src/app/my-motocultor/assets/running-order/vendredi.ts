@@ -71,7 +71,7 @@ export const vendredi: SlotJSON[] = [
     start: new Date('2025-08-15T15:00:00'),
     end: new Date('2025-08-15T15:40:00'),
     scene: Scene.SS,
-    band: 'Rectal Smegma',
+    band: 'Sublime Cadaveric Decomposition',
     isPurple: true,
   },
   {
@@ -134,7 +134,7 @@ export const vendredi: SlotJSON[] = [
     start: new Date('2025-08-15T18:15:00'),
     end: new Date('2025-08-15T19:05:00'),
     scene: Scene.SS,
-    band: 'Enthroned',
+    band: 'Darkenhöld',
     isPurple: true,
   },
   {
