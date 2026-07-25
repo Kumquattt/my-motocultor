@@ -1,33 +1,34 @@
 <div class="page">
   <section class="scene-headers">
-    @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
-    <section class="header-scene-name">
-      <h2>{{ sceneSlots[0] }}</h2>
-    </section>
+    @for (sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
+      <section class="header-scene-name">
+        <h2>{{ sceneSlots[0] }}</h2>
+      </section>
     }
   </section>
   <section class="slots-columns hide-scrollbars">
-    @for(sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
-    <div class="slots-by-scene-with-header">
-      <section class="slots">
-        <section
-          [hidden]="!sceneNeedsInitialSpacer(sceneSlots[0])"
-          class="Before spacer"
-        ></section>
-        @for(slot of sceneSlots[1]; track slot.id) {
-        <app-slot-component
-          [slotInput]="slot"
-          (favoriteToggle)="toggleFavoriteSlot(slot)"
-          [class.dim]="showFavoritesToggle() && !slot.isFavorite"
-        />
-        <section class="After spacer"></section>
-        }
-      </section>
-    </div>
+    @for (sceneSlots of shownSlotsByScene(); track sceneSlots[0]) {
+      <div class="slots-by-scene-with-header">
+        <section class="slots">
+          <section
+            [hidden]="!sceneNeedsInitialSpacer(sceneSlots[0])"
+            class="Before spacer"
+          ></section>
+          @for (slot of sceneSlots[1]; track slot.id) {
+            <app-slot-component
+              [slotInput]="slot"
+              (favoriteToggle)="toggleFavoriteSlot(slot)"
+              [class.dim]="showFavoritesToggle() && !slot.isFavorite"
+            />
+            <section class="After spacer"></section>
+          }
+        </section>
+      </div>
     }
   </section>
 
   <section class="slots-menu-footer">
+    <!-- TODO régler le décalage du sélecteur global -->
     <div
       class="day-button isAll clickable-div"
       [class.isSelected]="isSelected(null)"
@@ -36,13 +37,13 @@
       *
     </div>
     @for (day of Days; track day[0]) {
-    <div
-      class="day-button clickable-div"
-      [class.isSelected]="isSelected(day[1])"
-      (click)="selectDay(day[1])"
-    >
-      <span>{{ day[1] }}</span>
-    </div>
+      <div
+        class="day-button clickable-div"
+        [class.isSelected]="isSelected(day[1])"
+        (click)="selectDay(day[1])"
+      >
+        <span>{{ day[1] }}</span>
+      </div>
     }
     <div class="favorites-toggle-div">
       <button

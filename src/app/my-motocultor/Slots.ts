@@ -15,7 +15,7 @@ export class SlotJSON {
     start: Date,
     end: Date,
     scene: Scene,
-    band: string
+    band: string,
   ) {
     this.id = id;
     this.day = day;
@@ -33,16 +33,26 @@ export class Slot extends SlotJSON {
   constructor(
     id: string,
     day: Day,
-    start: Date,
-    end: Date,
+    start: Date,  // TODO convert to SlotTime 
+    end: Date,    // ditto
     scene: Scene,
-    band: string
+    band: string,
   ) {
     super(id, day, start, end, scene, band);
   }
 
-  public static fromJSON(jsonSlot: SlotJSON): Slot {
+  public static initializeFromJson(jsonSlot: SlotJSON): Slot {
     return { ...jsonSlot, isEven: true, isFavorite: false };
+  }
+}
+
+export class SlotTime {
+  hour: number = 0;
+  minute: number = 0;
+
+  constructor(hour: number, minute: number) {
+    this.hour = hour;
+    this.minute = minute;
   }
 }
 
@@ -53,7 +63,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T10:00:00'),
     new Date('2023-10-05T11:00:00'),
     Scene.DM,
-    'bandAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    'bandAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
   ),
   new Slot(
     'id2',
@@ -61,7 +71,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.DM,
-    'bandB'
+    'bandB',
   ),
   new Slot(
     'id3',
@@ -69,7 +79,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.BD,
-    'bandC'
+    'bandC',
   ),
   new Slot(
     'id4',
@@ -77,7 +87,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-11-05T11:00:00'),
     new Date('2023-11-05T12:00:00'),
     Scene.BD,
-    'bandD'
+    'bandD',
   ),
   new Slot(
     'id2',
@@ -85,7 +95,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.DM,
-    'bandB'
+    'bandB',
   ),
   new Slot(
     'id3',
@@ -93,7 +103,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.BD,
-    'bandC'
+    'bandC',
   ),
   new Slot(
     'id4',
@@ -101,7 +111,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-11-05T11:00:00'),
     new Date('2023-11-05T12:00:00'),
     Scene.SS,
-    'bandD'
+    'bandD',
   ),
   new Slot(
     'id2',
@@ -109,7 +119,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.MF,
-    'bandB'
+    'bandB',
   ),
   new Slot(
     'id3',
@@ -117,7 +127,7 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-10-05T11:00:00'),
     new Date('2023-10-05T12:00:00'),
     Scene.BD,
-    'bandC'
+    'bandC',
   ),
   new Slot(
     'lastBand',
@@ -125,6 +135,6 @@ export const slotsBaseList: Slot[] = [
     new Date('2025-11-05T11:00:00'),
     new Date('2023-11-05T12:00:00'),
     Scene.BD,
-    'LAST BAND'
+    'LAST BAND',
   ),
 ];

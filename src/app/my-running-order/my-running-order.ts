@@ -1,9 +1,9 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { dimanche } from '../my-motocultor/assets/running-order/dimanche';
-import { jeudi } from '../my-motocultor/assets/running-order/jeudi';
-import { samedi } from '../my-motocultor/assets/running-order/samedi';
-import { vendredi } from '../my-motocultor/assets/running-order/vendredi';
+import { dimanche } from '../my-motocultor/assets/running-order/2025/dimanche';
+import { jeudi } from '../my-motocultor/assets/running-order/2025/jeudi';
+import { samedi } from '../my-motocultor/assets/running-order/2025/samedi';
+import { vendredi } from '../my-motocultor/assets/running-order/2025/vendredi';
 import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot } from '../my-motocultor/Slots';
@@ -16,25 +16,27 @@ import { SlotComponent } from './slot/slot-component';
   styleUrl: './my-running-order.css',
 })
 export class MyRunningOrder {
+
   //// VARIABLES ////
   localStorageService = inject(LocalStorageService);
   Days = Object.entries(Day);
 
   slots = signal<Slot[]>(this.#initializeSlots());
   favoritedSlots = computed(() =>
-    this.slots().filter((slot) => slot.isFavorite)
+    this.slots().filter((slot) => slot.isFavorite),
   );
   showFavoritesToggle = signal(false);
   // No filter: keep non-favorites but dimmed
   shownSlots = computed(() => this.slots());
+
   selectedDay = signal<Day | null>(null);
   shownSlotsByDay = computed(() =>
     this.selectedDay()
       ? this.shownSlots().filter((slot) => this.selectedDay() == slot.day)
-      : this.shownSlots()
+      : this.shownSlots(),
   );
   shownSlotsByScene = computed<Map<Scene, Slot[]>>(() =>
-    this.#groupByScene(this.shownSlotsByDay())
+    this.#groupByScene(this.shownSlotsByDay()),
   );
 
   //// METHODS ////
@@ -43,11 +45,11 @@ export class MyRunningOrder {
     this.#updateFromSavedDay();
 
     this.showFavoritesToggle.set(
-      this.localStorageService.getSavedShowFavoritesToggle()
+      this.localStorageService.getSavedShowFavoritesToggle(),
     );
     effect(() => {
       this.localStorageService.saveShowFarovitesToggle(
-        this.showFavoritesToggle()
+        this.showFavoritesToggle(),
       );
     });
   }
@@ -59,7 +61,7 @@ export class MyRunningOrder {
       const savedSlots: Slot[] = this.slots().map((slot) =>
         favoritedSlotsIds.includes(slot.id)
           ? { ...slot, isFavorite: true }
-          : slot
+          : slot,
       );
       this.slots.set(savedSlots);
     }
@@ -77,7 +79,7 @@ export class MyRunningOrder {
     for (const [scene, value] of Object.entries(Scene)) {
       myMap.set(
         value,
-        slots.filter((slot) => value == slot.scene)
+        slots.filter((slot) => value == slot.scene),
       );
     }
     return myMap;
@@ -86,8 +88,8 @@ export class MyRunningOrder {
   toggleFavoriteSlot(toggledSlot: Slot) {
     this.slots.update((currentSlots) =>
       currentSlots.map((currentSlot) =>
-        this.#toggleFavoriteIfEquals(currentSlot, toggledSlot)
-      )
+        this.#toggleFavoriteIfEquals(currentSlot, toggledSlot),
+      ),
     );
     this.#saveSlots();
   }
@@ -100,7 +102,7 @@ export class MyRunningOrder {
   #saveSlots() {
     const favorites = this.favoritedSlots();
     this.localStorageService.saveFavoritesSlotsIds(
-      favorites.map((slot) => slot.id)
+      favorites.map((slot) => slot.id),
     );
   }
 
@@ -122,9 +124,9 @@ export class MyRunningOrder {
 
   #initializeSlots(): Slot[] {
     const slots = [...jeudi, ...vendredi, ...samedi, ...dimanche].map(
-      (jsonSlot) => Slot.fromJSON(jsonSlot)
+      (jsonSlot) => Slot.initializeFromJson(jsonSlot),
     );
-    // .sort((a, b) => a.start.getTime() - b.start.getTime());
+    
     return slots;
   }
 
