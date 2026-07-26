@@ -1,8 +1,8 @@
 # My Motocultor 🤘
+
 https://kumquattt.github.io/my-motocultor/
 <br/>
 <br/>
-
 
 <img src="./src/app/my-motocultor/assets/imgs/french-flag.svg" alt="drawing" width="20"/> <br/>
 Ce projet est une simple page web pour avoir votre propre running-order au Motocultor 2025, créé parce que je n'ai pas trouvé d'équivalent simple pour iphone.<br/>
@@ -24,17 +24,17 @@ You can also filter by day. <br/>
 <br />
 <br />
 
-
 ## TODO each year
+
 - Add the list of bands for the year
 - Update the fond, colors and background for that year's theme
 
 <br />
 
-
 ## Build and deployment
 
 Run and build the project like any angular (20) project.
+Github page mirror repository on https://github.com/Kumquattt/my-motocultor.git (Main source: https://codeberg.org/JeromeR/my-motocultor)
 
 # Licensing
 
