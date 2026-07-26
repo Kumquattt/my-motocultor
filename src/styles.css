@@ -9,12 +9,13 @@
   --african-violet: #a291c8ff;
   --eggplant: #764665ff;
 
-  --slotA: #4f8883;
-  --slotB: #c0a5ff;
+  --slotA: #0bafa3 /* 2025 #4f8883*/;
+  --slotB: #e57718 /* 2025 #c0a5ff*/;
   --motoc-dark-red: #aa3b5b;
   --motoc-purple: #c0a5ff;
+  --motoc-highlight: #ffdfa3;
 
-  --motoc-font: "MarvinVisionsBig";
+  --motoc-font: "apotek-variable";
   --motoc-letter-spacing: 0.04em;
 
   background-color: var(--black);
@@ -54,7 +55,8 @@ body {
 }
 
 @font-face {
-  font-family: MarvinVisionsBig;
-  src: local(MarvinVisionsBig),
-    url(app/my-motocultor/assets/MarvinVisions-Bold.woff2);
+  font-family: apotek-variable;
+  src:
+    local(apotek-variable),
+    url(app/my-motocultor/assets/fonts/Apotek\ Variable\ Compressed\ ExtraLight.otf);
 }

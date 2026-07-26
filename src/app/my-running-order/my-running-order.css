@@ -6,7 +6,8 @@
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
-  background-image: url(../my-motocultor/assets/motocultor25_fond.webp);
+  background-image: url(../my-motocultor/assets/imgs/motocultor26_fond_pinces.webp);
+  background-position: center;
 }
 
 .scene-headers {
@@ -15,7 +16,7 @@
   max-height: 70px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--motoc-dark-red);
+  border-bottom: 1px solid var(--motoc-highlight);
   text-overflow: ellipsis;
   background-color: var(--black);
 }
@@ -30,7 +31,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
-    color: var(--motoc-dark-red);
+    color: var(--motoc-highlight);
   }
 }
 
@@ -79,7 +80,7 @@
 
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  border: 2px solid var(--motoc-dark-red);
+  border: 2px solid var(--motoc-highlight);
   border-bottom-style: none;
 
   font-size: 100%;
@@ -106,7 +107,7 @@
 
   &.isSelected {
     color: var(--black);
-    background-color: var(--motoc-dark-red);
+    background-color: var(--motoc-highlight);
   }
 }
 
@@ -129,8 +130,8 @@
     }
   }
   .favorite-toggle-disabled {
-    border-color: var(--motoc-dark-red);
-    color: var(--motoc-dark-red);
+    border-color: var(--motoc-highlight);
+    color: var(--motoc-highlight);
     filter: saturate(00%);
   }
 }

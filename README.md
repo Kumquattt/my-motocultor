@@ -4,7 +4,7 @@ https://kumquattt.github.io/my-motocultor/
 <br/>
 
 
-<img src="./src/app/my-motocultor/assets/french-flag.svg" alt="drawing" width="20"/> <br/>
+<img src="./src/app/my-motocultor/assets/imgs/french-flag.svg" alt="drawing" width="20"/> <br/>
 Ce projet est une simple page web pour avoir votre propre running-order au Motocultor 2025, créé parce que je n'ai pas trouvé d'équivalent simple pour iphone.<br/>
 Sélectionnez simplement les groupes que vous souhaitez voir, appuyez sur l'étoile et seuls ces groupes seront visibles ! <br/>
 Vous pouvez également filtrer par jour. <br/>
@@ -14,7 +14,7 @@ Vous pouvez également filtrer par jour. <br/>
 <br/>
 <br/>
 
-<img src="./src/app/my-motocultor/assets/uk-flag.svg" alt="drawing" width="20"/><br/>
+<img src="./src/app/my-motocultor/assets/imgs/uk-flag.svg" alt="drawing" width="20"/><br/>
 This is a simple web page to track your running-order at Motocultor 2025, created because I could not find any simple equivalent for iphones. <br/>
 Simply select the bands you want to see, press the star button, and only those will be visible ! <br/>
 You can also filter by day. <br/>
