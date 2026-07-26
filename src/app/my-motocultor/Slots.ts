@@ -1,6 +1,5 @@
 import { Day, Scene } from './Enums';
-
-export class SlotJSON {
+export class SlotJSON2025 {
   id: string;
   day: Day;
   start: Date;
@@ -26,20 +25,41 @@ export class SlotJSON {
   }
 }
 
-export class Slot extends SlotJSON {
-  isEven: boolean = true;
-  isFavorite: boolean = false;
+export class SlotJSON {
+  id: string;
+  day: Day;
+  startHour: number;
+  startMinute: number;
+  endHour: number;
+  endMinute: number;
+  scene: Scene;
+  band: string;
+  isOdd: boolean = false;
 
   constructor(
     id: string,
     day: Day,
-    start: Date,  // TODO convert to SlotTime 
-    end: Date,    // ditto
+    startHour: number,
+    startMinute: number,
+    endHour: number,
+    endMinute: number,
     scene: Scene,
     band: string,
   ) {
-    super(id, day, start, end, scene, band);
+    this.id = id;
+    this.day = day;
+    this.startHour = startHour;
+    this.startMinute = startMinute;
+    this.endHour = endHour;
+    this.endMinute = endMinute;
+    this.scene = scene;
+    this.band = band;
   }
+}
+
+export class Slot extends SlotJSON {
+  isEven: boolean = true;
+  isFavorite: boolean = false;
 
   public static initializeFromJson(jsonSlot: SlotJSON): Slot {
     return { ...jsonSlot, isEven: true, isFavorite: false };
@@ -55,86 +75,3 @@ export class SlotTime {
     this.minute = minute;
   }
 }
-
-export const slotsBaseList: Slot[] = [
-  new Slot(
-    'id1',
-    Day.JEUDI,
-    new Date('2025-10-05T10:00:00'),
-    new Date('2023-10-05T11:00:00'),
-    Scene.DM,
-    'bandAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-  ),
-  new Slot(
-    'id2',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.DM,
-    'bandB',
-  ),
-  new Slot(
-    'id3',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.BD,
-    'bandC',
-  ),
-  new Slot(
-    'id4',
-    Day.SAMEDI,
-    new Date('2025-11-05T11:00:00'),
-    new Date('2023-11-05T12:00:00'),
-    Scene.BD,
-    'bandD',
-  ),
-  new Slot(
-    'id2',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.DM,
-    'bandB',
-  ),
-  new Slot(
-    'id3',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.BD,
-    'bandC',
-  ),
-  new Slot(
-    'id4',
-    Day.SAMEDI,
-    new Date('2025-11-05T11:00:00'),
-    new Date('2023-11-05T12:00:00'),
-    Scene.SS,
-    'bandD',
-  ),
-  new Slot(
-    'id2',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.MF,
-    'bandB',
-  ),
-  new Slot(
-    'id3',
-    Day.VENDREDI,
-    new Date('2025-10-05T11:00:00'),
-    new Date('2023-10-05T12:00:00'),
-    Scene.BD,
-    'bandC',
-  ),
-  new Slot(
-    'lastBand',
-    Day.SAMEDI,
-    new Date('2025-11-05T11:00:00'),
-    new Date('2023-11-05T12:00:00'),
-    Scene.BD,
-    'LAST BAND',
-  ),
-];

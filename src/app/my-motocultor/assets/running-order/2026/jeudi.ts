@@ -1,7 +1,7 @@
 import { Day, Scene } from '../../../Enums';
 import { SlotJSON } from '../../../Slots';
 
-export const jeudi: any = [{
+export const jeudi: SlotJSON[] = [{
   id: 'j-1',
   day: Day.JEUDI,
   startHour: 15,

@@ -3,7 +3,7 @@
 import { Day, Scene } from '../../../Enums';
 import { SlotJSON } from '../../../Slots';
 
-export const samedi: any = [
+export const samedi: SlotJSON[] = [
   {
     id: 's-1',
     day: Day.SAMEDI,

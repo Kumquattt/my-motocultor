@@ -15,16 +15,11 @@ export class SlotComponent {
     this.favoriteToggle.emit();
   }
 
-  printTime(time: Date): string {
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    var minutesString = minutes.toString();
-    if (minutes == 0) {
-      minutesString = '00';
-    } else if (minutes < 10) {
-      minutesString = `0${minutesString}`;
+  printTime(minute: number): string {
+    if (minute < 10) {
+      return '0' + minute;
+    } else {
+      return minute.toString();
     }
-
-    return `${hours}:${minutesString}`;
   }
 }

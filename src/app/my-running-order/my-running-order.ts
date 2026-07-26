@@ -1,9 +1,9 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { dimanche } from '../my-motocultor/assets/running-order/2025/dimanche';
-import { jeudi } from '../my-motocultor/assets/running-order/2025/jeudi';
-import { samedi } from '../my-motocultor/assets/running-order/2025/samedi';
-import { vendredi } from '../my-motocultor/assets/running-order/2025/vendredi';
+import { dimanche } from '../my-motocultor/assets/running-order/2026/dimanche';
+import { jeudi } from '../my-motocultor/assets/running-order/2026/jeudi';
+import { samedi } from '../my-motocultor/assets/running-order/2026/samedi';
+import { vendredi } from '../my-motocultor/assets/running-order/2026/vendredi';
 import { Day, Scene } from '../my-motocultor/Enums';
 import { LocalStorageService } from '../my-motocultor/local-storage-service';
 import { Slot } from '../my-motocultor/Slots';
