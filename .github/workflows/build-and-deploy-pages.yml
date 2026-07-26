@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
-    - uses: actions/setup-node@v4 #this installs node and npm for us
+      uses: actions/checkout@v6
+    - uses: actions/setup-node@v6 #this installs node and npm for us
       with:
         node-version: '22.x' 
     - name: Build
