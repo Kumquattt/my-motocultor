@@ -34,7 +34,7 @@ export const samedi: SlotJSON[] = [
     endHour: 16,
     endMinute: 30,
     scene: Scene.DM,
-    band: 'Ill Niño',
+    band: 'Sidilarsen',
     isOdd: true,
   },
   {
